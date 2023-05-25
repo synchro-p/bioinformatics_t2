@@ -1,0 +1,8 @@
+#!/bin/bash
+percent=$(grep -oP '[\.\d]+(?=%)' ./outputs/output.txt)
+echo "$percent"
+if (( $(echo "$percent >= 90.0" |bc -l) )); then
+	echo "OK"
+else
+	echo "Not OK"
+fi

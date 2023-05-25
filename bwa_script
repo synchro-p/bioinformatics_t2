@@ -1,0 +1,4 @@
+#!/bin/bash
+fastqc -o ./outputs/fastqc *.fastq;
+bwa mem e_coli_genome.fna e_coli_seq.fastq | samtools view -bo outputs/output.bam -;
+samtools flagstat outputs/output.bam > outputs/output.txt
